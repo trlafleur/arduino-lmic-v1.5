@@ -33,7 +33,7 @@
 #define BCN_WINDOW_osticks     ms2osticks(BCN_WINDOW_ms)
 #define AIRTIME_BCN_osticks    us2osticks(AIRTIME_BCN)
 #if defined(CFG_eu868)
-#define DNW2_SAFETY_ZONE       ms2osticks(300)		// was 3000 now 300
+#define DNW2_SAFETY_ZONE       ms2osticks(300)		// <-- was 3000 now 300
 #endif
 #if defined(CFG_us915)
 #define DNW2_SAFETY_ZONE       ms2osticks(750)
@@ -761,7 +761,7 @@ bit_t LMIC_setupChannel (u1_t chidx, u4_t freq, u2_t drmap, s1_t band) {
 
 void LMIC_disableChannel (u1_t channel) {
     if( channel < 72+MAX_XCHANNELS )
-        LMIC.channelMap[channel >> 4] &= ~(1<<(channel&0xF));		// change from /4 to >>4
+        LMIC.channelMap[channel >> 4] &= ~(1<<(channel&0xF));		// <-- change from /4 to >>4
 }
 
 static u1_t mapChannels (u1_t chpage, u2_t chmap) {
