@@ -56,7 +56,7 @@ static void hal_io_check() {
 // -----------------------------------------------------------------------------
 // SPI
 
-static const SPISettings settings(10E6, MSBFIRST, SPI_MODE0);
+static const SPISettings settings(4E6, MSBFIRST, SPI_MODE0);			// <--------------- set SPI speed to less that 5MHZ for SAMD processor   TRL
 
 static void hal_spi_init () {
     SPI.begin();
@@ -169,6 +169,8 @@ void hal_init () {
     hal_spi_init();
     // configure timer and interrupt handler
     hal_time_init();
+    
+    delay(5);				// <-------------- trl  required when adding TTN this with MySensor ?? very odd
 }
 
 void hal_failed (const char *file, u2_t line) {

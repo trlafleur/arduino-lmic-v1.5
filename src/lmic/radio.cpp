@@ -10,6 +10,7 @@
  *******************************************************************************/
 
 #include "lmic.h"
+#include <Arduino.h>			// <-------------------------------- trl
 
 // ---------------------------------------- 
 // Registers Mapping
@@ -653,6 +654,8 @@ void radio_init () {
 
     // some sanity checks, e.g., read version number
     u1_t v = readReg(RegVersion);
+    Serial.print("Radio Model: ");
+    Serial.println( v);													// <--------- trl
 #ifdef CFG_sx1276_radio
     ASSERT( v == 0x12 ); 
 #elif CFG_sx1272_radio

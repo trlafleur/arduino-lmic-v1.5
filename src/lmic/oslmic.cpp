@@ -8,7 +8,6 @@
  * Contributors:
  *    IBM Zurich Research Lab - initial API, implementation and documentation
  *******************************************************************************/
-
 #include "lmic.h"
 
 // RUNTIME STATE

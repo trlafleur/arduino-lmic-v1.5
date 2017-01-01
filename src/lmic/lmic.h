@@ -261,4 +261,5 @@ void LMIC_setLinkCheckMode (bit_t enabled);
 // Special APIs - for development or testing
 // !!!See implementation for caveats!!!
 
+
 #endif // _lmic_h_

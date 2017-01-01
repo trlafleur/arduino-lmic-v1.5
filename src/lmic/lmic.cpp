@@ -11,6 +11,7 @@
 
 //! \file
 #include "lmic.h"
+#include <Arduino.h>			// <-------------------------------- trl
 
 #if !defined(MINRX_SYMS)
 #define MINRX_SYMS 5
@@ -1899,6 +1900,7 @@ static void engineUpdate (void) {
         return;
     }
 
+	Serial.println("LIMC: in Engine Update\n");
     ostime_t now    = os_getTime();
     ostime_t rxtime = 0;
     ostime_t txbeg  = 0;
